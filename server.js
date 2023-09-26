@@ -25,30 +25,6 @@ app.get('/', (req, res) => {
 app.use(cors());
 app.use(express.json());
 
-app.post('/command', (req, res) => {
-
-  const command = req.body.command;
-
-  handleCommand(command);
-
-  res.send('OK');
-
-});
-
-function handleCommand(command) {
-
-  if (command === 'minimize_wpf') {
-    sendMinimizeWpfCommand(); 
-  }
-
-}
-
-function sendMinimizeWpfCommand() {
-
-  // код для вызова API WPF приложения
-
-}
-
 app.get('/notify', (req, res) => {
 
   // Отправка события всем подключенным сокетам
